@@ -1,0 +1,217 @@
+/* =========================
+   MAIN NAVBAR
+========================= */
+.main-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  padding: 12px 0;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  transition: background 0.3s ease, padding 0.3s ease;
+}
+
+/* =========================
+   NAV LINKS (DESKTOP)
+========================= */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 6px 2px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #05385a, #93d4ee);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: rgb(29, 126, 150);
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+.Back-button {
+  background: transparent;
+  color: #555;
+  border: 1px solid #8a8a8a;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.Back-button:hover {
+  background: #279ba3;
+  color: #000;
+}
+
+/* Mobile back button (navbar) */
+.mobile-back {
+  display: none;
+  position: absolute;
+  right: 16px;
+}
+
+/* =========================
+   SEPARATOR
+========================= */
+.nav-links li:not(:last-child)::after {
+  content: "|";
+  position: absolute;
+  right: -18px;
+  color: #555;
+  font-size: 14px;
+}
+
+/* =========================
+   HAMBURGER BUTTON
+========================= */
+.menu-toggle {
+  display: none;
+  position: absolute;
+  left: 16px;
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 22px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus,
+.menu-toggle:active {
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+}
+
+/* =========================
+   MOBILE SIDEBAR
+========================= */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 240px;
+  height: 100vh;
+  background: #111;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: left 0.3s ease;
+  z-index: 200;
+}
+
+.mobile-sidebar.open {
+  left: 0;
+}
+
+.mobile-sidebar a {
+  color: #eaeaea;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.mobile-sidebar a:hover {
+  color: #fff;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 150;
+}
+
+/* =========================
+   TABLET & MOBILE
+========================= */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  .mobile-back {
+    display: block;
+  }
+}
+
+/* =========================
+   PHONES ONLY
+========================= */
+@media (max-width: 480px) {
+  .main-navbar {
+    padding: 20px 0;
+  }
+
+  .menu-toggle {
+    font-size: 24px;
+    left: 12px;
+  }
+}
+
+/* =========================
+   SCROLL EFFECT
+========================= */
+.main-navbar.scrolled {
+  padding: 8px 0;
+  background: linear-gradient(90deg, #111, #1c1c1c);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}

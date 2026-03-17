@@ -1,0 +1,176 @@
+/* ====================== MAIN LAYOUT - GRID ====================== */
+.sports-container {
+  display: grid;
+  grid-template-columns: 3fr 1.2fr;
+  gap: 24px;
+  max-width: 1250px;
+  margin: 30px auto;
+  padding: 0 15px;
+  font-family: "Segoe UI", sans-serif;
+  align-items: start;
+  background: linear-gradient(180deg, #fafafa 0%, #f4f6f8 100%);
+}
+
+/* LEFT + RIGHT COLUMN WRAPPER */
+.left-column,
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ================= BIG CARD ================= */
+.big-card {
+  display: flex;
+  gap: 16px;
+  cursor: pointer;
+  padding: 16px;
+  border-radius: 12px;
+  align-items: flex-start;
+  height: 180px;
+  background: #ffffff;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.big-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.big-card img {
+  width: 250px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.big-card:hover img {
+  transform: scale(1.02);
+  filter: brightness(1.02);
+}
+
+/* BIG CONTENT */
+.big-content h2 {
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 6px 0;
+  color: #111;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  transition: color 0.3s ease;
+  /* truncate to 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;  
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.big-card:hover .big-content h2 {
+  color: #d32f2f;
+}
+
+.meta {
+  font-size: 13px;
+  color: #666;
+  margin-top: auto;
+}
+
+/* BADGE */
+.badge {
+  background: #d32f2f;
+  color: #fff;
+  font-size: 11px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px rgba(211, 47, 47, 0.35);
+}
+
+/* ================= SMALL CARD ================= */
+.small-card {
+  display: flex;
+  gap: 12px;
+  cursor: pointer;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #ffffff;
+  height: 100%;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.small-card:hover {
+  transform: translateX(3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.small-card img {
+  width: 95px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.small-card:hover img {
+  transform: scale(1.03);
+  filter: brightness(1.03);
+}
+.small-card p {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #222;
+  margin: 0;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; 
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .sports-container {
+    grid-template-columns: 1fr;
+  }
+
+  .left-column,
+  .right-column {
+    gap: 18px;
+  }
+
+  .small-card {
+    flex-direction: row;
+    min-width: 260px;
+    height: auto;
+  }
+
+  .small-card img {
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .big-card {
+    flex-direction: column;
+    gap: 12px;
+    height: auto;
+  }
+
+  .big-card img {
+    width: 100%;
+    height: 180px;
+  }
+
+  .small-card img {
+    width: 95px;
+    height: 100%;
+  }
+}
