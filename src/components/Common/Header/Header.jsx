@@ -1,13 +1,13 @@
 import React from "react";
 import "./Header.css";
-import logoImg from "../../../assets/Images/NewsBlogW.png";
+import logo from "../../../assets/images/newsblog-logo.png";
 
 const Header = () => {
   return (
     <header className="header">
       <div className="logo-container">
         <img
-          src={logoImg}
+          src={logo}
           alt="NewsBlog Logo"
           className="logo"
         />
